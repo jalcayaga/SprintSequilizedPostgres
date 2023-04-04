@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de médicos</title>
+  </head>
+  <body>
+    <h1>Lista de médicos</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>RUT</th>
+          <th>Dirección</th>
+          <th>Especialidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% medicos.forEach(medico => { %>
+          <tr>
+            <td><%= medico.nombre %></td>
+            <td><%= medico.rut %></td>
+            <td><%= medico.direccion %></td>
+            <td><%= medico.especialidad.descripcion %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>
