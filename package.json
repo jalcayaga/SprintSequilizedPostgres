@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js"
+    "dev": "nodemon ./src/index.js",
+    "kiosko": "nodemon ./src/kiosko.js"
   },
   "repository": {
     "type": "git",
