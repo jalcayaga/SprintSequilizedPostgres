@@ -1,0 +1,24 @@
+<div class="col-3">
+    <h4 class="my-4 text-white text-center">Formulario</h4>
+    <form id="contactForm" action="/students" method="POST">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control form-control-sm" id="name" name="name" placeholder="Nombre">
+      </div>
+      <div class="mb-3">
+        <label for="rut" class="form-label">RUT</label>
+        <input type="text" class="form-control form-control-sm" id="rut" name="rut" placeholder="XX.XXX.XXX-X" pattern="^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9kK]{1}$" required>
+        <div class="invalid-feedback">Por favor ingrese un RUT válido en el formato XX.XXX.XXX-X.</div>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Curso</label>
+        <input type="text" class="form-control form-control-sm" id="curso" name="curso" placeholder="Curso">
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Nivel</label>
+        <input type="text" class="form-control form-control-sm" id="nivel" name="nivel" placeholder="Nivel">
+      </div>
+     
+      <button type="submit" class="btn btn-sm w-100 btn-warning">Enviar</button>
+    </form>
+</div>

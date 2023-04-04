@@ -1,0 +1,94 @@
+
+<div class="col-3">
+  <!-- ------------------------ Registrar Transaccion ------------------------ -->
+  <h4 class="my-4 text-white text-center">Registrar transacción</h4>
+  <form method="POST" action="/bank/transaccion">
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo:</label>
+      <select id="tipo" name="tipo" class="form-select form-select-sm">
+        <option value="deposito">Depósito</option>
+        <option value="retiro">Retiro</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="cuenta" class="form-label">Cuenta:</label>
+      <input
+        type="number"
+        class="form-control form-control-sm"
+        id="cuenta"
+        name="cuenta"
+        placeholder="Cuenta"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción:</label>
+      <input
+        type="text"
+        class="form-control form-control-sm"
+        id="descripcion"
+        name="descripcion"
+        placeholder="Descripción"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="fecha" class="form-label">Fecha:</label>
+      <input
+        type="date"
+        class="form-control form-control-sm"
+        id="fecha"
+        name="fecha"
+        placeholder="Fecha"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="monto" class="form-label">Monto:</label>
+      <input
+        type="number"
+        class="form-control form-control-sm"
+        id="monto"
+        name="monto"
+        placeholder="Monto"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-sm w-100 btn-warning">Registrar transacción</button>
+  </form>
+</div>
+
+<!-- -------------------------- Tabla transaccion -------------------------- -->
+<div class="col-9">
+   <h4 class="my-4 text-white text-center">Transacciones</h4>
+   <table class="table table-dark table-striped table-hover table-sm">
+     <thead>
+       <tr class="text-warning">
+         <th>N°</th>
+         <th>Descripción</th>
+         <th>Fecha</th>
+         <th>Monto</th>
+         <th>Cuenta</th>
+       </tr>
+     </thead>
+     <tbody>
+       <% transacciones.forEach((transaccion) => { %>
+       <tr
+         data-id="<%= transaccion.id %>"
+         data-descripcion="<%= transaccion.descripcion %>"
+         data-fecha="<%= transaccion.fecha %>"
+         data-monto="<%= transaccion.monto %>"
+         data-cuenta="<%= transaccion.cuenta_id %>"
+       >
+         <td class="text-warning"><%= transaccion.id %></td>
+         <td><%= transaccion.descripcion.substring(0, 30) + (transaccion.descripcion.length > 30 ? '...' : '') %></td>
+         <td><%= new Date(transaccion.fecha).toLocaleDateString() %></td>
+         <td><%= transaccion.monto %></td>
+         <td><%= transaccion.cuenta_id %></td>
+       </tr>
+       <% }) %>
+     </tbody>
+   </table>
+ </div>
+ 

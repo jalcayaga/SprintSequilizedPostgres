@@ -1,10 +1,11 @@
 // Importar Sequelize y crear una instancia para conectarse a la base de datos
-const Sequelize = require('sequelize');
-const config = require('./config/config.json')['development'];
-const sequelize = new Sequelize(config.database, config.username, config.password, config);
+import Sequelize from 'sequelize';
+import config from './config/config.json' assert { type: "json" };
+
+const sequelize = new Sequelize(config.development);
 
 // Definir el modelo de Especialidad
-const Especialidad = sequelize.define("especialidad", {
+export const Especialidad = sequelize.define("especialidad", {
   codigo: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -17,7 +18,7 @@ const Especialidad = sequelize.define("especialidad", {
 });
 
 // Definir el modelo de Médico
-const Medico = sequelize.define("medico", {
+export const Medico = sequelize.define("medico", {
   nombre: {
     type: Sequelize.STRING,
     allowNull: false,

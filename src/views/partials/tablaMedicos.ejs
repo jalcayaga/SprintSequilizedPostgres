@@ -1,0 +1,25 @@
+<div class="col-md-9 mb-4 order-1 order-md-1">
+  <h4 class="my-4 text-white text-center">Lista de médicos</h4>
+  <div class="table-responsive" style="overflow-x: auto;">
+    <table class="table table-dark table-striped table-sm">
+      <thead>
+        <tr class="text-warning">
+            <th>Nombre</th>
+            <th>RUT</th>
+            <th>Dirección</th>
+            <th>Especialidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% medicos.forEach(medico => { %>
+          <tr>
+            <td><%= medico.nombre %></td>
+            <td><%= medico.rut %></td>
+            <td><%= medico.direccion %></td>
+            <td><%= medico.especialidad.descripcion %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>

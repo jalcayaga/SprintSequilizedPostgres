@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/header') %>
+    <title>Inicio</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <%- include('partials/navigation') %>
+
+    <div class="container">
+      <div class="row mt-4">
+        <!-- Crear cuenta -->
+        <%- include('partials/crearCuentaTransaccion') %>
+      </div>
+      <div class="row mt-4">
+        <!-- tabla transaccion -->
+        <%- include('partials/tablaCuentaTransaccion') %>
+      </div>
+    </div>
+    
+    <!-- footer -->
+    <%- include('partials/footer') %>
+
+    
+    
+    <!-- scripts -->
+    <%- include('partials/scriptsUsers') %>

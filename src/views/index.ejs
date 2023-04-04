@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/header') %>
+
+    <style>
+      /* ajuste de altura para que la sección izquierda y derecha tengan el mismo tamaño */
+      body,
+      html {
+        height: 100%;
+      }
+      .container-full-height {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      /* ajuste de tamaño para los inputs */
+      .form-control {
+        max-width: 250px;
+      }
+    </style>
+    <title>Inicio</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <%- include('partials/navigation') %>
+
+    <div class="container">
+      <div class="row h-100">
+        <!-- sección izquierda con formulario -->
+        <div class="col-md-5 col-lg-4 bg-dark d-flex align-items-center justify-content-center">
+            <form class="px-2 py-2" method="POST" action="/users" style="width: 260px;">
+              <div class="mb-3">
+                <h4 class="my-4 text-center">Registrate</h4>
+              </div>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Nombre"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido:</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  id="apellido"
+                  name="apellido"
+                  placeholder="Apellido"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input
+                  type="email"
+                  class="form-control form-control-sm"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password">Contraseña:</label>
+                <input type="password" class="form-control form-control-sm" id="password" name="password" required>
+              </div>
+              <div class="mb-3">
+                <label for="confirm-password">Confirmar Contraseña:</label>
+                <input type="password" class="form-control form-control-sm" id="confirm-password" name="confirmPassword" required>
+              </div>
+              <button type="submit" class="btn btn-warning mt-2 btn-sm w-100">Registrate</button>
+            </form>
+
+        </div>
+        <!-- sección derecha con imagen de fondo y texto -->
+        <div class="col-md-7 bg-dark text-light align-items-center justify-content-center">
+          <div class="container-full-height">
+            <h2 class="display-4 mb-5 text-center">
+              Bienvenido a la app de Postgres
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- footer -->
+    <%- include('partials/footer') %>
+
+    <!-- scripts -->
+
+    <%- include('partials/scriptsUsers') %>
+  </body>
+</html>

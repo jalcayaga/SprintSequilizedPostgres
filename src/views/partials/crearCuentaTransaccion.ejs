@@ -1,0 +1,53 @@
+<div class="col-3">
+  <!-- ---------------------------- Crear Cuenta ----------------------------- -->
+  <h4 class="my-4 text-white text-center">Crear cuenta</h4>
+  <form method="POST" action="/bank/cuenta">
+    <div class="mb-3">
+      <label for="id" class="form-label">Cuenta:</label>
+      <input
+        type="number"
+        class="form-control form-control-sm"
+        id="id"
+        name="id"
+        placeholder="N° Cuenta"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="saldo" class="form-label">Saldo:</label>
+      <input
+        type="number"
+        class="form-control form-control-sm"
+        id="saldo"
+        name="saldo"
+        placeholder="Saldo"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-sm w-100 btn-warning">Crear cuenta</button>
+  </form>
+</div>
+
+  <!-- ---------------------------- Tabla cuentas ---------------------------- -->
+<div class="col-9">
+  <h4 class="my-4 text-white text-center">Cuentas</h4>
+<table class="table table-dark table-striped table-hover table-sm">
+  <thead>
+    <tr class="text-warning">
+      <th>N° Cuenta</th>
+      <th>Saldo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cuentas.forEach((cuenta) => { %>
+    <tr
+      data-id="<%= cuenta.id %>"
+      data-saldo="<%= cuenta.saldo %>"
+    >
+      <td class="text-warning"><%= cuenta.id %></td>
+      <td><%= cuenta.saldo %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+</div>

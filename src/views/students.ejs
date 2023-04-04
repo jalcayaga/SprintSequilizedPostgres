@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/header') %>
+    <title>Inicio</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <%- include('partials/navigation') %>
+
+    <div class="container">
+      <div class="row mt-4">
+        <!-- Crear estudiante -->
+        <%- include('partials/crearStudent') %>
+        <!-- tabla -->
+        <%- include('partials/tablaStudents') %>
+      </div>
+    </div>
+    
+    <!-- footer -->
+    <%- include('partials/footer') %>
+    <!-- Edit Student Modal -->
+    <%- include('partials/modalEdit') %>
+    <%- include('partials/modalDelete') %>
+    <!-- scripts -->
+    
+    <%- include('partials/scriptsStudents') %>
